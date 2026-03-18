@@ -3,11 +3,22 @@ let btn = document.getElementById("modalBtn");
 let close = document.getElementById("closeBtn");
 
 
-btn.onclick = function() {
+btn.onclick = function()
+{
   modal.style.display = "block";
 }
 
 
-close.onclick = function() {
+close.onclick = function()
+{
   modal.style.display = "none";
 }   
+
+let swapHtmlBtn = document.getElementById("swap");
+let hitHtmlBtn = document.getElementById("hit");
+let solveHtmlbtn = document.getElementById("solve");
+
+swapHtmlBtn.onclick = function()
+{
+    window.location.href = "swap.html";
+}
