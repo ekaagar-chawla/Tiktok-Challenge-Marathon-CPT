@@ -22,3 +22,14 @@ swapHtmlBtn.onclick = function()
 {
     window.location.href = "swap.html";
 }
+
+hitHtmlBtn.onclick = function()
+{
+    window.location.href = "aim.html";
+}
+solveHtmlbtn.onclick = function ()
+{
+    window.location.href = "puzzle.html";
+}
+
+// I want to add some fancy cursor, inspired by this 
