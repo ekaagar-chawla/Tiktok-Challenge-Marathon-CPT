@@ -1,4 +1,5 @@
 let colors = ["red","green","yellow","blue"];
+let moves = 0;
 
 // shuffle top row
 let topRow = [];
@@ -27,13 +28,15 @@ function draw(){
   bottomDiv.innerHTML = "";
 
   // top row (clickable)
-  topRow.forEach((c,i)=>{
+
+  topRow.forEach((c,i)=>{ //for(let i = 0; i < c.length;)
     let btn = document.createElement("button");
     btn.textContent = c;
     btn.style.background = c;
     btn.onclick = ()=>clickTop(i);
     topDiv.appendChild(btn);
   });
+
 
   // bottom row (target)
   bottomRow.forEach(c=>{
@@ -53,6 +56,7 @@ function clickTop(i){
   }
 
   // swap
+  console.log(selected);
   let temp = topRow[selected];
   topRow[selected] = topRow[i];
   topRow[i] = temp;
@@ -65,7 +69,7 @@ function updateScore(){
   let correct = 0;
 
   for(let i=0;i<4;i++){
-    if(topRow[i] === bottomRow[i]){
+    if(topRow[i] == bottomRow[i]){
       correct++;
     }
   }
@@ -74,4 +78,10 @@ function updateScore(){
 }
 
 draw();
+let quitBtn = document.getElementById("quitButton");
 
+
+quitBtn.onclick = function()
+{
+    window.location.href = "index.html";
+}
