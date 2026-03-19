@@ -47,7 +47,7 @@ function draw(){
 }
 
 function clickTop(i){
-  if(selected === null){
+  if(selected == null){
     selected = i;
     return;
   }

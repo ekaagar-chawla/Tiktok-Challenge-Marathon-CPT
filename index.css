@@ -140,12 +140,13 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/*Cursor*/
 
+/*
 * {    
-  cursor: none;   /* sets the root to have no default cursor */
+  cursor: none;   
 }
 
+*/
 
 #cursor-wrapper {
     position: fixed;

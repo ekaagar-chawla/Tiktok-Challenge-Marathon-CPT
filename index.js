@@ -31,5 +31,3 @@ solveHtmlbtn.onclick = function ()
 {
     window.location.href = "puzzle.html";
 }
-
-// I want to add some fancy cursor, inspired by this 
