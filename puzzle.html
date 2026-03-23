@@ -2,11 +2,27 @@
 <html>
     <head>
         <title>Solve the Puzzle</title>
+        <link rel="stylesheet" href="cursor.css">
         <link rel = "stylesheet" href = "puzzle.css">
     </head>
     <body>
-        <h1> Welcome to Solve The Puzzle!</h1>
+        <h1 id = "title"></h1>
+        <div id = "grid">
+        <div id = "grid-cells">
+            <div id = "grid-numbers">
+            </div>
+        </div>
+        </div>
+        <button id = "skipButton">Skip?</button>
         <button id = "quitButton">Quit</button>
+        <div id="cursor-wrapper">
+        <div id="cursor-dot"></div>
+        <div id="tl" class="corner"></div>
+        <div id="tr" class="corner"></div>
+        <div id="br" class="corner"></div>
+        <div id="bl" class="corner"></div>
+        </div>
+        <script src = "cursor.js"></script>
         <script src = "puzzle.js"></script>
     </body>
 </html>

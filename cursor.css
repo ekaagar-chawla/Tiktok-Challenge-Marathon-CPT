@@ -1,8 +1,6 @@
-* {    
+* {
   cursor: none;   
 }
-
-
 
 #cursor-wrapper {
     position: fixed;
@@ -33,9 +31,9 @@
   width: 12px;
   height: 12px;
   border: 2px solid #cc2222;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-/* I tried different values, these ones work properly */
+/* these values work because each corner is 12px long, so having a consistent 6px gap */
 #tl { 
   border-right: none;
   border-bottom: none;
@@ -57,3 +55,22 @@
   transform: translate(-18px,  6px);
 }
 
+
+.pixels {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(204,34,34,0.67);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%,-50%);
+    animation: pixelFade 0.8s ease forwards;
+}
+
+@keyframes pixelFade {
+  to {
+     opacity: 0;
+     transform: translate(-50%,-50%);
+  }
+}

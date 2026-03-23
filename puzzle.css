@@ -23,10 +23,30 @@ h1 {
     width: 10%;
     border-radius: 5px;
     font-size: 16px;
-    transform: transform 0.15s, box-shadow 0.15s;
+    transform: transform 0.3s, box-shadow 0.15s;
 }
 
 #quitButton:hover {
     transform: scale(1.08);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#skipButton {
+  background-color: gold;
+  display: block;
+  padding: 10px 20px;
+  width: 10%;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  transform: transform 0.4s ease, box-shadow 0.15s;
+}
+
+#skipButton:hover {
+  transform:scale(1.10);
+  box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
+}
+
+#skipButton:active {
+    transform: scale(0.8);
 }
