@@ -7,7 +7,7 @@ for(let i = 0; i < colors.length; i++){
   topRow[i] = colors[i];
 }
 
-// shuffle
+// shuffle fischer-yates shuffle
 for(let i = topRow.length - 1; i > 0; i--){
   let j = Math.floor(Math.random() * (i + 1));
   let temp = topRow[i];
