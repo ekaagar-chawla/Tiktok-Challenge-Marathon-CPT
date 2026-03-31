@@ -10,29 +10,30 @@ body {
 }
 
 h1 {
-    color: #55C8F0;
-    font-weight: bold   ;
-    text-align: center;
+  color: #55C8F0;
+  font-weight: bold;
+  text-align: center;
 }
 
 #quitButton {
-    background-color: red;
-    display: block;
-    padding: 10px 20px;
-    width: 10%;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: transform 0.3s, box-shadow 0.15s;
+  background-color: red;
+  display: block;
+  padding: 10px 20px;
+  width: 10%;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: transform 0.3s, box-shadow 0.15s;
 }
 
 #quitButton:hover {
-    transform: scale(1.08);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #skipButton {
   background-color: gold;
   display: block;
+  border-radius: 10px;
   padding: 10px 20px;
   width: 10%;
   float: right;
@@ -42,12 +43,12 @@ h1 {
 }
 
 #skipButton:hover {
-  transform:scale(1.10);
+  transform: scale(1.10);
   box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
 }
 
 #skipButton:active {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 #movesCount {
@@ -58,26 +59,28 @@ h1 {
 
 #grid {
   display: grid;
-  grid-template-columns: repeat(3, 100px);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
   gap: 8px;
-  margin: 20px auto;
+  margin: 60px auto;
   width: fit-content;
 }
 
 .tile {
-    width: 110px;
-    height: 110px;
-    background: rgba(173,216,230, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size:  32px;
-    row-gap: 20px;
-    column-gap: 20px;
-    font-weight: 670px;
-    color: #1a1a1a;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 210px;
+  height: 210px;
+  background: rgba(173, 216, 230, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  row-gap: 20px;
+  column-gap: 20px;
+  font-weight: 670px;
+  color: #1a1a1a;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tile:hover {
@@ -87,8 +90,9 @@ h1 {
 
 .blank {
   background: transparent;
-  border: 2px dashed rgba(255,255,255,0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.1);
 }
+
 .blank:hover {
   transform: none;
   box-shadow: none;
@@ -96,13 +100,14 @@ h1 {
 
 
 #winningmessage {
-    text-align: center;
-    color: #55C8F0;
-    animation: popIn 0.4s ease;
+  text-align: center;
+  color: #55C8F0;
+  animation: popIn 0.4s ease;
 }
 
 
 #restartBtn {
+  border-radius: 9px;
   float: right;
   display: block;
   padding: 10px 20px;
@@ -114,16 +119,16 @@ h1 {
 
 
 #restartBtn:hover {
-  transform:scale(1.10);
+  transform: scale(1.10);
   box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
 }
 
 #restartBtn:active {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 
-#basicUsage {
+#timer {
   color: red;
   font-size: 25px;
 }

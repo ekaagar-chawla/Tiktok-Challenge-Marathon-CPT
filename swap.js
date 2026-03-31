@@ -27,7 +27,7 @@ function draw(){
   topDiv.innerHTML = "";
   bottomDiv.innerHTML = "";
 
-  // top row (clickable)
+  // top row (clickable) 
 
   topRow.forEach((c,i)=>{ //for(let i = 0; i < c.length;)
     let btn = document.createElement("button");

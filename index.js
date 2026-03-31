@@ -74,7 +74,7 @@ infoAim.onclick = function()
 }  
 
 const textPuzzle = "Here is how to play Solve the Puzzle :<br> There will be a 3x3 randomized grid of numbers from 1 - 8, with one blank space. Your job is to put the puzzle in ascending order in the least amount of moves possible, in order to completely solve the puzzle. <br><br>"+
-"You will have a time and a moves counter to track your progrss.";
+"You will have a time and a moves counter to track your progress.";
 
 infoPuzzle.onclick = function()
 {
