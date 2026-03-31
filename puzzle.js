@@ -28,22 +28,22 @@ skipBtn.onclick = function () {
 let grid = [];
 let moves = 0;
 
-// --- Timer stuff ---
-var timerStarted = false;
-var timerInterval = null;
-var totalSeconds = 0;
+// I learnt to make this stopwatch from this youtube video: https://www.youtube.com/watch?v=d8-LGhKtzRw. 
+let timerStarted = false;
+let timerInterval = null;
+let totalSeconds = 0;
 
 function updateTimerDisplay() {
-    var hours = Math.floor(totalSeconds / 3600);
-    var minutes = Math.floor((totalSeconds % 3600) / 60);
-    var seconds = totalSeconds % 60;
+    let hours = Math.floor(totalSeconds / 3600);
+    let minutes = Math.floor((totalSeconds % 3600) / 60);
+    let seconds = totalSeconds % 60;
 
     // pad each number to 2 digits so it always looks like 00:00:00
-    var h = String(hours).padStart(2, '0');
-    var m = String(minutes).padStart(2, '0');
-    var s = String(seconds).padStart(2, '0');
+    let h = String(hours).padStart(2, '0');
+    let m = String(minutes).padStart(2, '0');
+    let s = String(seconds).padStart(2, '0');
 
-    document.getElementById("timer").textContent = "Time: " + h + ":" + m + ":" + s;
+    document.getElementById("timer").textContent = `Time: ${h}:${m}:${s}`;
 }
 
 function startTimer() {
