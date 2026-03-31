@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Solve the Puzzle</title>
     <link rel="stylesheet" href="cursor.css">
     <link rel="stylesheet" href="puzzle.css">
 </head>
+
 <body>
     <h1 id="title"></h1>
     <p id="movesCount">Moves: 0</p>
     <div id="grid"></div>
+    <p id="timer">Time: 00:00:00</p>
     <div id="winningmessage" style="display:none;">
         <h2> Congrats! You solved it!</h2>
     </div>
     <button id="restartBtn"> Restart</button>
     <button id="skipButton">Skip?</button>
     <button id="quitButton">Quit</button>
+
 
     <div id="cursor-wrapper">
         <div id="cursor-dot"></div>
@@ -26,4 +30,5 @@
     <script src="cursor.js"></script>
     <script src="puzzle.js"></script>
 </body>
+
 </html>

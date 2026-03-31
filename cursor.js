@@ -4,7 +4,7 @@ let tr = document.getElementById("tr");
 let bl = document.getElementById("bl");
 let br = document.getElementById("br");
 
-let mouseX = 0;  
+let mouseX = 0;
 let mouseY = 0;  //initializing the positon of the cursor
 let rotation = 0;
 let spinning = true;
@@ -17,8 +17,7 @@ document.addEventListener("mousemove", (event) => {   //checking for movement, a
     wrapper.style.left = `${mouseX}px`;
     wrapper.style.top = `${mouseY}px`;
 
-    if(!spinning && lockedEl)
-    {
+    if (!spinning && lockedEl) {
         lockCorners(lockedEl);
     }
 
@@ -26,11 +25,9 @@ document.addEventListener("mousemove", (event) => {   //checking for movement, a
 
 function rotate() //function used to actually rotate the cursor wrapper.
 {
-    if(spinning)
-    {
+    if (spinning) {
         rotation += 3;
-        if(rotation >= 360)
-        {
+        if (rotation >= 360) {
             rotation = 0;
         }
         wrapper.style.transform = `translate(-50%,-50%) rotate(${rotation}deg)`;
@@ -41,13 +38,13 @@ rotate();
 
 let clickableItems = document.querySelectorAll("button, a"); //collects all the clickable elements on the html page, buttons and anchor links.
 
-for(let i = 0; i < clickableItems.length; i++) //iterates through all the clickable items in the list, and then adds event Listeners for leaving and entering the items.
+for (let i = 0; i < clickableItems.length; i++) //iterates through all the clickable items in the list, and then adds event Listeners for leaving and entering the items.
 {
     let el = clickableItems[i];
     el.addEventListener("mouseenter", (event) => {
         spinning = false;
         lockedEl = event.target;
-        rotation = 0    
+        rotation = 0
         wrapper.style.transform = "translate(-50%, -50%) rotate(0deg)";
         lockCorners(event.target);
     });
@@ -66,7 +63,7 @@ function lockCorners(el)  //got help from chatgpt.com, I did not know how to get
     let rectangularDimensions = el.getBoundingClientRect();
     let padding = 4;
 
-    let left = rectangularDimensions.left  - mouseX - padding;
+    let left = rectangularDimensions.left - mouseX - padding;
     let right = rectangularDimensions.right - mouseX + padding - 12;
     let top = rectangularDimensions.top - mouseY - padding;
     let bottom = rectangularDimensions.bottom - mouseY + padding - 12;
@@ -78,7 +75,7 @@ function lockCorners(el)  //got help from chatgpt.com, I did not know how to get
 }
 
 
-document.addEventListener("mousemove", (event) => {    //everytime the mouse moves, there is a pixel trail
+document.addEventListener("mousemove", (event) => {    //This detects mouse movement, and in that case, creates a pixel div and adds the class pixels to it. The initial position starts at the location of the cursor. 
 
     let pixels = document.createElement("div");
     pixels.classList.add("pixels");
@@ -86,11 +83,10 @@ document.addEventListener("mousemove", (event) => {    //everytime the mouse mov
     pixels.style.top = `${event.clientY}px`;
     document.body.appendChild(pixels);
     removePixel()
-    setTimeout(removePixel,600);
+    setTimeout(removePixel, 600);
 
 });
-function removePixel()
-{
+function removePixel() {
     pixels.remove();
-}   
+}
 
