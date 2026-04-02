@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hit the Pins</title>
-        <link rel = "stylesheet" href = "aim.css">
-        <link rel="stylesheet" href="cursor.css">
-    </head>
-    <body>
-        <h1> Welcome to Hit the Pins.</h1>
-        <button id = "quitButton">Quit</button>
-        <div id="cursor-wrapper">
+
+<head>
+    <title>Hit the Pins</title>
+    <link rel="stylesheet" href="aim.css">
+    <link rel="stylesheet" href="cursor.css">
+</head>
+
+<body>
+    <h1> Welcome to Hit the Pins.</h1>
+    <p id="timer">Time: 00:00:00</p>
+    <div id="winningMessage" style="display:none;">
+        <h2>You did it!</h2>
+        <button id="nextButton">Next</button>
+        <button id="restartButton">Restart</button>
+    </div>
+    <button id="quitButton">Quit</button>
+    <div id="cursor-wrapper">
         <div id="cursor-dot"></div>
         <div id="tl" class="corner"></div>
         <div id="tr" class="corner"></div>
         <div id="br" class="corner"></div>
         <div id="bl" class="corner"></div>
-        </div>
-        <script src = "cursor.js"></script>
-        <script src = "aim.js"></script>
-    </body>
+    </div>
+    <script src="cursor.js"></script>
+    <script src="aim.js"></script>
+</body>
+
 </html>

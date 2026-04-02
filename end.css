@@ -1,51 +1,181 @@
 body {
+    position: relative;
+    margin: 0;
+    padding: 0;
     background-color: #2b2b2b;
-
     background-image:
-    linear-gradient(#3a3a3a 1px, transparent 1px),
-    linear-gradient(90deg, #3a3a3a 1px, transparent 1px);
-
+        linear-gradient(#3a3a3a 1px, transparent 1px),
+        linear-gradient(90deg, #3a3a3a 1px, transparent 1px);
     background-size: 40px 40px;
-
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    /* This is the viewport height, it helps manage the size for different browser sizes. It is more dynamic and relative to browser size
+    I will implement this for the other page designs also. I learnt this from: https://www.sitepoint.com/css-viewport-units-quick-start/ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#page {
+    width: 100%;
+    max-width: 900px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+
+header {
+    text-align: center;
 }
 
 h1 {
+    margin: 0 0 10px 0;
+    font-size: 52px;
+    font-weight: 700;
     color: #55C8F0;
-    font-weight: bold;
-    font-style:oblique;
-    text-align: center;
-}
-/* I got inspiration for this from W3 schools, https://www.w3schools.com/css/css3_animations.asp */
-@keyframes myAnimation {
-  0%   {background-color:red; left:0px; top:0px;}
-  25%  {background-color:yellow; left:200px; top:0px;}
-  50%  {background-color:blue; left:200px; top:200px;}
-  75%  {background-color:green; left:0px; top:200px;}
-  100% {background-color:red; left:0px; top:0px;}
+    letter-spacing: -1px;
 }
 
-#replay {   
-    display: block;
-    background-color: gold;
-    padding: 10px 20px;
-    width: 10%;
+#subtitle {
+    margin: 0;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 15px;
-    float: right;
-    animation-name: myAnimation;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    margin-top: 590px;
-    transform: transform 0.4s ease, box-shadow 0.15s;    
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+
+#results {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.card {
+    flex: 1;
+    /* This allows the card to be flexible with respect to the contents around it */
+    max-width: 260px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(85, 200, 240, 0.15);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    animation: fadeUp 0.6s ease both;
+}
+
+#card-swap {
+    animation-delay: 0.1s;
+}
+
+#card-pins {
+    animation-delay: 0.2s;
+}
+
+#card-puzzle {
+    animation-delay: 0.3s;
+}
+
+.card:hover {
+    border-color: rgba(85, 200, 240, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(85, 200, 240, 0.1);
+}
+
+.card-icon {
+    font-size: 36px;
+    line-height: 1;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-time {
+    font-size: 42px;
+    font-weight: 700;
+    color: #55C8F0;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.card-label {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+}
+
+
+#total-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: rgba(85, 200, 240, 0.07);
+    border: 1px solid rgba(85, 200, 240, 0.25);
+    border-radius: 12px;
+    padding: 20px 36px;
+    box-sizing: border-box;
+    animation: fadeUp 0.6s 0.4s ease both;
+    /*havent made this animation yet */
+}
+
+#total-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#totalTime {
+    font-size: 32px;
+    font-weight: 700;
+    color: #55C8F0;
+    letter-spacing: -0.5px;
+}
+
+
+#replay {
+    padding: 14px 48px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    color: #1a1a1a;
+    background: #55C8F0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    animation: fadeUp 0.6s 0.5s ease both;
+    /*I havent made this animation yet, but I will probably make something that gives a fadeUp animation as the page loads. */
 }
 
 #replay:hover {
-    transform: scale(1.10);
-    box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
+    background: #7dd8f5;
+    transform: scale(1.06);
+    box-shadow: 0 8px 24px rgba(85, 200, 240, 0.35);
 }
 
 #replay:active {
-    transform: scale(0.9);
+    transform: scale(0.97);
 }
+
+/* make @keyframes fadeUp animation */

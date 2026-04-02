@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Swap Game</title>
   <link rel="stylesheet" href="swap.css">
   <link rel="stylesheet" href="cursor.css">
 </head>
+
 <body>
 
-<h3>Top Row (click to swap)</h3>
-<div id="top"></div>
 
-<h3>Target Row (visible for now)</h3>
-<div id="bottom"></div>
+  <h3>Top Row (click to swap)</h3>
+  <div id="top"></div>
 
-<p id="score"></p>
-<button id = "quitButton">Quit</button>
-<div id="cursor-wrapper">
+  <h3>Target Row</h3>
+  <div id="bottom"></div>
+
+  <p id="score"></p>
+  <p id="timer">Time: 00:00:00</p>
+  <div id="winningMessage" style="display:none;">
+    <h2>Nice! You matched them all!</h2>
+    <button id="nextButton">Next</button>
+    <button id="restartButton">Restart</button>
+  </div>
+  <button id="quitButton">Quit</button>
+  <div id="cursor-wrapper">
     <div id="cursor-dot"></div>
     <div id="tl" class="corner"></div>
     <div id="tr" class="corner"></div>
     <div id="br" class="corner"></div>
     <div id="bl" class="corner"></div>
-    </div>
-<script src = "cursor.js"></script>
-<script src="swap.js"></script>
-</body>
-</html>
+  </div>
+  <script src="cursor.js"></script>
+  <script src="swap.js"></script>
+  <img src="transsign.png" id="box">
 
+
+</body>
+
+</html>

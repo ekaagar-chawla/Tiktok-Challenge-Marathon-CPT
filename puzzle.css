@@ -6,7 +6,6 @@ body {
     linear-gradient(#3a3a3a 1px, transparent 1px),
     linear-gradient(90deg, #3a3a3a 1px, transparent 1px);
 
-
   background-size: 40px 40px;
   font-family: 'Inter', sans-serif;
 }
@@ -20,8 +19,10 @@ h1 {
 
 
 #quitButton {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.45);
   display: block;
+  position: absolute;
+  margin-left: 20px;
   padding: 10px 20px;
   width: 10%;
   border-radius: 10px;
@@ -37,13 +38,14 @@ h1 {
 
 
 #skipButton {
-  background-color: gold;
+  background-color: rgba(255, 213, 2, 0.2);
   display: block;
   border-radius: 10px;
   padding: 10px 20px;
   width: 10%;
   float: right;
   font-size: 16px;
+  color: rgba(246, 201, 0, 0.7);
   font-weight: bold;
   transition: transform 0.4s ease, box-shadow 0.15s;
 }
@@ -114,44 +116,33 @@ h1 {
   box-shadow: none;
 }
 
-
-
-
 #winningmessage {
   text-align: center;
   color: #55C8F0;
   animation: popIn 0.4s ease;
 }
 
-
-
-
 #restartBtn {
   border-radius: 9px;
   float: right;
+  margin-left: 20px;
   display: block;
   padding: 10px 20px;
   width: 10%;
-  background: gold;
+  background-color: rgba(255, 213, 2, 0.2);
   font-size: 16px;
+  color: rgba(246, 201, 0, 0.7);
   font-weight: bold;
 }
-
-
-
 
 #restartBtn:hover {
   transform: scale(1.10);
   box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
 }
 
-
 #restartBtn:active {
   transform: scale(0.8);
 }
-
-
-
 
 #timer {
   color: red;
@@ -159,4 +150,13 @@ h1 {
   text-align: center;
   font-weight: bold;
   margin-top: 20px;
+}
+
+#finalTime {
+  color: red;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  float: left;
 }
