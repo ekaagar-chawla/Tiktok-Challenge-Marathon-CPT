@@ -149,7 +149,7 @@ function updateScore() {
 
   scoreText.textContent = "Correct positions: " + correct + " / " + images.length;
 
-  if (correct === images.length) {
+  if (correct == images.length) {
     stopTimer();
     sessionStorage.setItem('swapTime', totalSeconds);
     document.getElementById("winningMessage").style.display = "block";

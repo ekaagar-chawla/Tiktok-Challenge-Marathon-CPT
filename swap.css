@@ -28,7 +28,7 @@ h3 {
 
 
 /* buttons = tiles */
-button:not(#quitButton) {
+button:not(#quitButton):not(#nextButton):not(#restartButton) {
   width: 140px;
   height: 200px;
   border: none;
@@ -45,14 +45,14 @@ button:not(#quitButton) {
 
 
 /* hover effect */
-button:not(#quitButton):hover {
+button:not(#quitButton):not(#nextButton):not(#restartButton):hover {
   transform: scale(1.08);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
 /* click effect */
-button:not(#quitButton):active {
+button:not(#quitButton):not(#nextButton):not(#restartButton):active {
   transform: scale(0.95);
 }
 
@@ -98,4 +98,57 @@ button:not(#quitButton):active {
   text-align: center;
   font-weight: bold;
   margin-top: 20px;
+}
+
+
+#nextButton {
+  border-radius: 9px;
+  float: right;
+  height: auto;
+  margin-left: 20px;
+  display: block;
+  padding: 10px 20px;
+  width: 10%;
+  background-color: rgba(255, 213, 2, 0.2);
+  font-size: 16px;
+  color: rgba(246, 201, 0, 0.7);
+  font-weight: bold;
+  transition: transform 0.4s ease, box-shadow 0.15s;
+}
+
+#nextButton:hover {
+  transform: scale(1.10);
+  box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
+}
+
+#nextButton:active {
+  transform: scale(0.8);
+}
+
+#restartButton {
+  border-radius: 9px;
+  float: right;
+  margin-left: 20px;
+  display: block;
+  padding: 10px 20px;
+  width: 10%;
+  background-color: rgba(255, 213, 2, 0.2);
+  font-size: 16px;
+  color: rgba(246, 201, 0, 0.7);
+  font-weight: bold;
+  transition: transform 0.4s ease, box-shadow 0.15s;
+}
+
+#restartButton:hover {
+  transform: scale(1.10);
+  box-shadow: 0px 4px 10px rgba(230, 248, 29, 0.6);
+}
+
+#restartButton:active {
+  transform: scale(0.8);
+}
+
+#winningMessage {
+  text-align: center;
+  color: #55C8F0;
 }

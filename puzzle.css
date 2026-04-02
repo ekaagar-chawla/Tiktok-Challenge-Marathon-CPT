@@ -25,6 +25,8 @@ h1 {
   margin-left: 20px;
   padding: 10px 20px;
   width: 10%;
+  font-weight: bold;
+  color: rgb(237, 0, 0);
   border-radius: 10px;
   font-size: 16px;
   transition: transform 0.3s, box-shadow 0.15s;
@@ -33,7 +35,7 @@ h1 {
 
 #quitButton:hover {
   transform: scale(1.08);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(249, 0, 0, 0.8);
 }
 
 
