@@ -87,7 +87,7 @@ h1 {
 
 .card:hover {
     border-color: rgba(85, 200, 240, 0.5);
-    transform: translateY(-4px);
+    transform: scale(1.08);
     box-shadow: 0 12px 30px rgba(85, 200, 240, 0.1);
 }
 
@@ -179,3 +179,12 @@ h1 {
 }
 
 /* make @keyframes fadeUp animation */
+@keyframes fadeup {
+    from {
+        translate: translate(-4px);
+    }
+
+    to {
+        translate: translate(6px);
+    }
+}
