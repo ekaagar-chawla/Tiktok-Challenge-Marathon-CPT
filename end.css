@@ -179,12 +179,3 @@ h1 {
 }
 
 /* make @keyframes fadeUp animation */
-@keyframes fadeup {
-    from {
-        translate: translate(-4px);
-    }
-
-    to {
-        translate: translate(6px);
-    }
-}

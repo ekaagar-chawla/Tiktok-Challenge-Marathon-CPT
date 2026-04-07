@@ -1,3 +1,6 @@
+//I saw this type of cursor on this website: https://www.dwait.dev. I tried to recreate the same in javascript. 
+
+
 let wrapper = document.getElementById("cursor-wrapper");  //Getting all the elements defined on html pages in the next few lines
 let tl = document.getElementById("tl");
 let tr = document.getElementById("tr");
