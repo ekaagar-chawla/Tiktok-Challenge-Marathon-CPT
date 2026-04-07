@@ -69,11 +69,11 @@ function resetTimer() {
 
 /*This function first populates, and then gets the index of the blank tile, it calls onto another function to get the neighbours,
  and swaps the blank index with a random neighbor 200 times. */
-function generateDaPuzzle() {
+function generateThePuzzle() {
     grid = [1, 2, 3, 4, 5, 6, 7, 8, 0];
     for (let i = 0; i < 200; i++) {
         let blank = grid.indexOf(0);
-        let neighbors = getDaNeighbors(blank);
+        let neighbors = getTheNeighbors(blank);
         let randomPick = Math.floor(Math.random() * neighbors.length);
         let temp = neighbors[randomPick];
         grid[blank] = grid[temp];
@@ -83,7 +83,7 @@ function generateDaPuzzle() {
 
 /*The function works like a 3x3 grid thats been flattened to a 1D array. The index is converted to rows and columns first
 Then the neighbors are found by moving up, down, left, or right. */
-function getDaNeighbors(i) {
+function getTheNeighbors(i) {
     let neighbors = [];
     let col = i % 3;
     let row = Math.floor(i / 3);
@@ -102,33 +102,38 @@ function getDaNeighbors(i) {
     return neighbors;
 }
 //Our CPT function
-function moveDaTile(index) {
+function moveTheTile(index) {
     let blank = grid.indexOf(0);//gets the index of the blank tile.
-    let neighbors = getDaNeighbors(blank);//gets the neighbors of the blank tile.
+    let neighbors = getTheNeighbors(blank);//gets the neighbors of the blank tile.
     let canMove = false;
     for (let i = 0; i < neighbors.length; i++) {
         if (neighbors[i] == index) { //checks if the clicked tile is a neighbor of the blank tile.
             canMove = true;
         }
     }
-    if (!canMove) {
-        return;
-    }
-
+    if (!canMove) return;
     // start the timer on the very first move
+    startTheTimer();
+    swapTheTiles(index);
+    incrementMoves();
+    renderGrid(); // call the render grid function to update the display.
+    checkIfSolved(); // call the check if solved function to check if the puzzle is solved.
+}
+function startTheTimer() {
     if (!timerStarted) {
         startTimer();
         timerStarted = true;
     }
-
-    grid[blank] = grid[index]; //swap the blank tile with the clicked tile.
-    grid[index] = 0;
-    moves++;// increment the number of moves
-    document.getElementById("movesCount").textContent = `Moves: ${moves}`; //set the text content of Moves as the current number of moves using a template literal. 
-    renderGrid(); // call the render grid function to update the display.
-    checkIfSolved(); // call the check if solved function to check if the puzzle is solved.
 }
-
+function incrementMoves() {
+    moves++;
+    document.getElementById("movesCount").textContent = `Moves: ${moves}`;
+}
+function swapTheTiles(index) {
+    let blank = grid.indexOf(0);
+    grid[blank] = grid[index];
+    grid[index] = 0;
+}
 
 function checkIfSolved() { //iterates through the current grid, and compares it to the solved grid that is given in this function. 
     let solved = [1, 2, 3, 4, 5, 6, 7, 8, 0];
@@ -154,8 +159,8 @@ function renderGrid() {
         else {
             tile.classList.add("tile");
             tile.textContent = grid[i];
-            tile.addEventListener("click", function () { //adds an event listener to the tile, which calls the moveDaTile function when the tile is clicked.
-                moveDaTile(i);
+            tile.addEventListener("click", function () { //adds an event listener to the tile, which calls the moveTheTile function when the tile is clicked.
+                moveTheTile(i);
             });
         }
         gridElement.appendChild(tile); //appends the tile to the grid element.
@@ -170,9 +175,9 @@ document.getElementById("restartBtn").addEventListener("click", function () { //
 
     // reset the timer so it's ready to go again on the next first move
     resetTimer();
-    generateDaPuzzle(); //intializes the whole grid and puzzle again because of the restart button. 
+    generateThePuzzle(); //intializes the whole grid and puzzle again because of the restart button. 
     renderGrid();
 });
 
-generateDaPuzzle();
+generateThePuzzle();
 renderGrid();
