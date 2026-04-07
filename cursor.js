@@ -40,7 +40,6 @@ function rotate() //function used to actually rotate the cursor wrapper.
 rotate();
 
 let clickableItems = document.querySelectorAll("button, a"); //collects all the clickable elements on the html page, buttons and anchor links.
-
 for (let i = 0; i < clickableItems.length; i++) //iterates through all the clickable items in the list, and then adds event Listeners for leaving and entering the items.
 {
     let el = clickableItems[i];

@@ -1,6 +1,4 @@
 let quitBtn = document.getElementById("quitButton");
-
-
 quitBtn.onclick = function () {
     window.location.href = "index.html";
 }
@@ -101,7 +99,7 @@ function getTheNeighbors(i) {
     }
     return neighbors;
 }
-//Our CPT function
+//Condensed the CPT function, and made it more efficient by calling on multiple helper functions. 
 function moveTheTile(index) {
     let blank = grid.indexOf(0);//gets the index of the blank tile.
     let neighbors = getTheNeighbors(blank);//gets the neighbors of the blank tile.
