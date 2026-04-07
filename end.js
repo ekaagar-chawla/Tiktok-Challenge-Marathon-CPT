@@ -34,3 +34,8 @@ if (sessionStorage.getItem('puzzleTime') != null) {
 
 let totalSeconds = swapSeconds + aimSeconds + puzzleSeconds;
 document.getElementById("totalTime").textContent = formatTime(totalSeconds);
+
+if (totalSeconds > 0) saveResult(swapSeconds, aimSeconds, puzzleSeconds, totalSeconds);
+
+// --- localStorage helpers ---
+

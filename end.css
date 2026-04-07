@@ -38,6 +38,7 @@ h1 {
     font-weight: 700;
     color: #55C8F0;
     letter-spacing: -1px;
+    animation: fadeUp 0.6s ease both;
 }
 
 #subtitle {
@@ -152,7 +153,8 @@ h1 {
 }
 
 
-#replay {
+#replay,
+#pastResults {
     padding: 14px 48px;
     font-size: 15px;
     font-weight: 600;
@@ -168,14 +170,128 @@ h1 {
     /*I havent made this animation yet, but I will probably make something that gives a fadeUp animation as the page loads. */
 }
 
-#replay:hover {
+#replay:hover,
+#pastResults:hover {
     background: #7dd8f5;
     transform: scale(1.06);
     box-shadow: 0 8px 24px rgba(85, 200, 240, 0.35);
 }
 
-#replay:active {
+#replay:active,
+#pastResults:active {
     transform: scale(0.97);
 }
 
-/* make @keyframes fadeUp animation */
+/* ── Modal ── */
+#modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-overlay.visible {
+    display: flex;
+}
+
+#modal {
+    position: relative;
+    background: #1e1e1e;
+    border: 1px solid rgba(85, 200, 240, 0.25);
+    border-radius: 16px;
+    padding: 36px 32px 28px;
+    width: 560px;
+    max-width: 92vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: fadeUp 0.3s ease both;
+}
+
+#modal-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #55C8F0;
+    text-align: center;
+}
+
+#modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+#modal-close:hover { color: #fff; }
+
+.modal-section-label {
+    margin: 0 0 6px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+}
+
+#top3-section { flex-shrink: 0; }
+
+#all-results {
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 4px;
+}
+
+.result-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 10px 14px;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.rank-gold   { border-color: rgba(255, 215, 0, 0.45); background: rgba(255,215,0,0.06); }
+.rank-silver { border-color: rgba(192, 192, 192, 0.4); background: rgba(192,192,192,0.05); }
+.rank-bronze { border-color: rgba(205, 127, 50, 0.4);  background: rgba(205,127,50,0.05); }
+
+.result-rank  { font-weight: 700; color: #55C8F0; min-width: 38px; }
+.result-times { flex: 1; color: rgba(255,255,255,0.5); text-align: center; font-size: 12px; }
+.result-total { font-weight: 700; color: #fff; }
+
+.no-data {
+    color: rgba(255,255,255,0.25);
+    font-size: 13px;
+    text-align: center;
+    margin: 0;
+}
+
+/* made @keyframes fadeUp animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

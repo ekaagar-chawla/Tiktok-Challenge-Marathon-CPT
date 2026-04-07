@@ -40,14 +40,28 @@
         </div>
 
         <button id="replay">Play Again</button>
+        <button id="pastResults">Previous Results</button>
     </div>
-
     <div id="cursor-wrapper">
         <div id="cursor-dot"></div>
         <div id="tl" class="corner"></div>
         <div id="tr" class="corner"></div>
         <div id="br" class="corner"></div>
         <div id="bl" class="corner"></div>
+    </div>
+
+    <!-- Previous Results Modal -->
+    <div id="modal-overlay">
+        <div id="modal">
+            <button id="modal-close">&#x2715;</button>
+            <h2 id="modal-title">Previous Results</h2>
+            <div id="top3-section">
+                <p class="modal-section-label">Top 3</p>
+                <div id="top3"></div>
+            </div>
+            <p class="modal-section-label">All Runs</p>
+            <div id="all-results"></div>
+        </div>
     </div>
 
     <script src="end.js"></script>
