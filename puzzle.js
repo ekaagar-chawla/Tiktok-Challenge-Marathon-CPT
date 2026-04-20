@@ -109,7 +109,9 @@ function moveTheTile(index) {
             canMove = true;
         }
     }
-    if (!canMove) return;
+    if (!canMove) {
+        return;
+    }
     // start the timer on the very first move
     startTheTimer();
     swapTheTiles(index);
