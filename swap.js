@@ -11,6 +11,8 @@ const images = [
 //https://www1.lunapic.com/editor/?action=transparent for transparent images
 
 
+
+
 // Shuffle function
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
@@ -64,7 +66,7 @@ function stopTimer() {
 
 
 let selectedIndex = null;
-
+let moves = 0;
 
 const topDiv = document.getElementById("top");
 const bottomDiv = document.getElementById("bottom");
@@ -156,6 +158,9 @@ function handleClick(index) {
     [topRow[selectedIndex], topRow[index]] =
       [topRow[index], topRow[selectedIndex]];
 
+    moves++;
+    document.getElementById("moves").textContent = "Moves: " + moves;
+
 
     selectedIndex = null;
   }
@@ -215,6 +220,8 @@ document.getElementById("restartButton").onclick = function () {
     topRow = shuffle([...images]);
     bottomRow = shuffle([...images]);
   } while (countCorrect(topRow, bottomRow) > 1);
+  moves = 0;
+  document.getElementById("moves").textContent = "Moves: 0";
   selectedIndex = null;
   document.getElementById("score").style.display = "block";
   document.getElementById("winningMessage").style.display = "none";

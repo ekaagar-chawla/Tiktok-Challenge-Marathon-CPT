@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit the Pins</title>
     <link rel="stylesheet" href="aim.css">
     <link rel="stylesheet" href="cursor.css">
 </head>
 
+
 <body>
-    <h1> Welcome to Hit the Pins.</h1>
+    <h1>Welcome to Hit the Pins</h1>
+
+
     <p id="timer">Time: 00:00:00</p>
+
+
     <div id="winningMessage" style="display:none;">
         <h2>You did it!</h2>
     </div>
+
+
+    <!-- GAME AREA -->
+    <div id="gameArea">
+
+
+        <!-- Direction Arrow -->
+        <div id="aimArrow">↑</div>
+
+
+        <!-- Ball at bottom -->
+        <div id="ball"></div>
+
+
+        <!-- Pins container (JS will place 4 randomly) -->
+        <div id="pinsContainer">
+            <div class="hitbox"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <!-- CONTROLS -->
+    <div id="controls">
+        <button id="lockDirection">Lock Direction</button>
+        <button id="lockPower">Lock Power</button>
+    </div>
+
+    <!-- GAME INFO -->
+    <div id="gameInfo">
+        <p id="direction"></p>
+        <p id="power"></p>
+    </div>
+
+
+    <!-- EXISTING BUTTONS -->
     <button id="nextButton">Next</button>
     <button id="restartButton">Restart</button>
     <button id="quitButton">Quit</button>
+
+
+    <!-- CURSOR -->
     <div id="cursor-wrapper">
         <div id="cursor-dot"></div>
         <div id="tl" class="corner"></div>
@@ -23,8 +75,12 @@
         <div id="br" class="corner"></div>
         <div id="bl" class="corner"></div>
     </div>
+
+
+    <!-- SCRIPTS -->
     <script src="cursor.js"></script>
     <script src="aim.js"></script>
 </body>
+
 
 </html>

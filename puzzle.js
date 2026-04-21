@@ -112,7 +112,10 @@ function moveTheTile(index) {
     if (!canMove) {
         return;
     }
-    // start the timer on the very first move
+    callAllFunctions(index);
+
+}
+function callAllFunctions(index) {
     startTheTimer();
     swapTheTiles(index);
     incrementMoves();

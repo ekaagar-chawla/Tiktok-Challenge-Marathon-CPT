@@ -21,7 +21,12 @@ h3 {
 }
 
 
-
+#moves {
+  color: #d1d1d1;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
 
 /* rows */
 #top,
@@ -76,9 +81,9 @@ button:not(#quitButton):not(#nextButton):not(#restartButton):active {
 /* score text */
 #score {
   margin-top: 70px;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
-  color: aqua;
+  color: #d1d1d1;
 }
 
 

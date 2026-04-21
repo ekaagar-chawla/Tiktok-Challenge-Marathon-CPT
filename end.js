@@ -15,6 +15,7 @@ function formatTime(seconds) {
 function saveResult(swap, aim, puzzle, total) {
     let results = JSON.parse(localStorage.getItem("marathonResults")) || [];
     /*json.parse creates an object, so I am using .push to add the new result to the object. 
+    It's appending al the values we have right as parameters to their respecgive keys. 
     I could also use a for loop going from 0 to i <= result.length, but this is cleaner. */
     results.push({
         swap: swap,
@@ -25,10 +26,11 @@ function saveResult(swap, aim, puzzle, total) {
     localStorage.setItem("marathonResults", JSON.stringify(results));
 }
 
+
 function loadResults() {
     let results = JSON.parse(localStorage.getItem("marathonResults")) || [];
 
-    // Used bubble sort for sorting from least to greatest. 
+    // Used bubble sort for sorting from least to greatest.
     for (let i = 0; i < results.length - 1; i++) {
         for (let j = 0; j < results.length - 1 - i; j++) {
             if (results[j].total > results[j + 1].total) {
@@ -38,10 +40,10 @@ function loadResults() {
             }
         }
     }
-
     return results;
 }
 
+//I used claude.com for this section of the code and I got some help with the idea and for the big for loop. 
 function showPastResults() {
     let results = loadResults();
     let top3Div = document.getElementById("top3");
@@ -145,6 +147,6 @@ if (aimSeconds > 0) { gamesPlayed = gamesPlayed + 1; }
 if (puzzleSeconds > 0) { gamesPlayed = gamesPlayed + 1; }
 
 // Only save if at least 2 games were completed
-if (gamesPlayed >= 2) {
+if (gamesPlayed == 3) {
     saveResult(swapSeconds, aimSeconds, puzzleSeconds, totalSeconds);
 }
