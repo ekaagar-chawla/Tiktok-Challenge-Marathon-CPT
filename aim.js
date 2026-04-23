@@ -17,8 +17,6 @@ let arrow = document.getElementById("aimArrow");
 // =====================
 // GAME STATE
 // =====================
-
-
 let direction = 0;
 let power = 0;
 
@@ -34,8 +32,6 @@ let powerInterval;
 // =====================
 // TIMER (STOPWATCH)
 // =====================
-
-
 let timerStarted = false;
 let timerInterval = null;
 let totalSeconds = 0;
@@ -73,8 +69,6 @@ function stopTimer() {
 // =====================
 // SPAWN PINS
 // =====================
-
-
 function spawnPins() {
     pinsContainer.innerHTML = "";
 
@@ -131,8 +125,6 @@ function spawnPins() {
 // =====================
 // AIMING
 // =====================
-
-
 function startAiming() {
     aiming = true;
     let increasing = true;
@@ -162,8 +154,6 @@ function startAiming() {
 // =====================
 // POWER
 // =====================
-
-
 function startPower() {
     settingPower = true;
     let increasing = true;
@@ -204,8 +194,6 @@ function startPower() {
 // =====================
 // RESET BALL
 // =====================
-
-
 function resetBall() {
     clearInterval(dirInterval);
     clearInterval(powerInterval);
@@ -214,6 +202,7 @@ function resetBall() {
     ball.style.left = "50%";
     ball.style.bottom = "10px";
     ball.style.top = "";
+
 
     direction = 0;
     power = 0;
@@ -224,10 +213,9 @@ function resetBall() {
 // =====================
 // SHOOT BALL
 // =====================
-
-
 function shootBall() {
     const angle = direction * Math.PI / 180;
+
 
     let x = ball.offsetLeft;
     let y = ball.offsetTop;
@@ -299,9 +287,16 @@ function shootBall() {
 
 
             if (document.querySelectorAll(".pin").length === 0) {
-                document.getElementById("winningMessage").style.display = "block";
                 stopTimer();
+
+                // If race mode is on, save timestamp and go to the next game
+                if (sessionStorage.getItem("raceModeActive") === "true") {
+                    sessionStorage.setItem("aimEndTime", Date.now());
+                    window.location.href = "puzzle.html";
+                    return;
+                }
                 sessionStorage.setItem('aimTime', totalSeconds);
+                document.getElementById("winningMessage").style.display = "block";
             }
 
 
@@ -320,9 +315,16 @@ function shootBall() {
 
 
             if (document.querySelectorAll(".pin").length === 0) {
-                document.getElementById("winningMessage").style.display = "block";
                 stopTimer();
+
+                // If race mode is on, save timestamp and go to the next game
+                if (sessionStorage.getItem("raceModeActive") === "true") {
+                    sessionStorage.setItem("aimEndTime", Date.now());
+                    window.location.href = "puzzle.html";
+                    return;
+                }
                 sessionStorage.setItem('aimTime', totalSeconds);
+                document.getElementById("winningMessage").style.display = "block";
             }
 
 
@@ -332,11 +334,10 @@ function shootBall() {
 
     }, 20);
 }
+
 // =====================
 // COLLISION
 // =====================
-
-
 function checkCollision() {
     const pins = document.querySelectorAll(".pin");
 
@@ -371,6 +372,11 @@ function checkCollision() {
 
 // Lock direction → power
 document.getElementById("lockDirection").onclick = function () {
+    if (!timerStarted) {
+        startTimer();
+        timerStarted = true;
+    }
+    timerStarted = true;
     if (aiming) {
         clearInterval(dirInterval);
         aiming = false;
@@ -406,10 +412,6 @@ document.getElementById("restartButton").onclick = function () {
 
     resetBall();
     spawnPins();
-
-
-    startTimer();
-    timerStarted = true;
 };
 
 
@@ -425,19 +427,16 @@ document.getElementById("nextButton").onclick = function () {
 };
 
 
+// Hide restart, next, and quit buttons in race mode
+if (sessionStorage.getItem("raceModeActive") === "true") {
+    document.getElementById("restartButton").style.display = "none";
+    document.getElementById("nextButton").style.display = "none";
+    document.getElementById("quitButton").style.display = "none";
+}
+
 // =====================
 // INIT
 // =====================
-
-
 spawnPins();
 resetBall();
-
-
-if (!timerStarted) {
-    startTimer();
-    timerStarted = true;
-}
-
-
 

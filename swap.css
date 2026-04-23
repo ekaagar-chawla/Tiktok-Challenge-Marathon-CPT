@@ -37,9 +37,6 @@ h3 {
   margin: 15px 0;
 }
 
-
-
-
 /* buttons = tiles */
 button:not(#quitButton):not(#nextButton):not(#restartButton) {
   width: 140px;

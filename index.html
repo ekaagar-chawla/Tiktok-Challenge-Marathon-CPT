@@ -1,55 +1,71 @@
 <!DOCTYPE html>
 <html>
-   <head>
-   <title>Tiktok Challenge Marathon</title>
-   <link rel = "stylesheet" href = "index.css">
-   <link rel = "stylesheet" href = "cursor.css">
-   </head>
+
+
+
+
+<head>
+    <title>Tiktok Challenge Marathon</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="cursor.css">
+</head>
+
+
+
+
 <body>
-   <h1> Welcome to the Tiktok Challenge Marathon.</h1>
-   <button id = "modalBtn">Open the instructions</button>
-   <div id = "myModal" class = "modal">
-       <div class = "modalContent">
-           <h1 id = "modalHeader"> Instructions for Tiktok Challenge Marathon.</h1>
-           <p id = "modalText"> Welcome to the TikTok Challenge Marathon by Ekaagar and Aaryan! <br>
-               This is a compilation of several games inspired by TikTok.<br>
-			   Try to complete the games as fast as possible! </p>
-			<p>
-            Click on the buttons to learn about the games! Good luck! <br>
-			<div id="gameButtons">
-				<button id = "infoSwap">Swap the Bottles</button>
-				<button id = "infoAim">Hit the Pins</button>
-				<button id = "infoPuzzle">Solve the Puzzle</button>
-			</div>
-			<br>
+    <h1> Welcome to the Tiktok Challenge Marathon.</h1>
+    <button id="modalBtn">Open the instructions</button>
+    <div id="myModal" class="modal">
+        <div class="modalContent">
+            <h1 id="modalHeader"> Instructions for Tiktok Challenge Marathon.</h1>
+            <p id="modalText"> Welcome to the TikTok Challenge Marathon by Ekaagar and Aaryan! <br>
+                This is a compilation of several games inspired by TikTok.<br>
+                Try to complete the games as fast as possible! </p>
+            <p>
+                Click on the buttons to learn about the games! Good luck! <br>
+            <div id="gameButtons">
+                <button id="infoSwap">Swap the Bottles</button>
+                <button id="infoAim">Hit the Pins</button>
+                <button id="infoPuzzle">Solve the Puzzle</button>
+            </div>
+            <br>
             </p>
-			
-            <button id = "closeBtn">Close</button>
-       </div>
-   </div>
-   <div id="gameButtons">
-       <button id ="swap"> Swap The Bottles </button>
-       <button id = "hit"> Hit the Pins</button>
-       <button id = "solve"> Solve the puzzle</button>
-   </div>
-   <div id="cursor-wrapper">
-   <div id="cursor-dot"></div>
-   <div id="tl" class="corner"></div>
-   <div id="tr" class="corner"></div>
-   <div id="br" class="corner"></div>
-   <div id="bl" class="corner">
-   </div>
-   </div>
-   <script src = "cursor.js"></script>
-   <script src = "index.js"></script>
+
+
+
+
+            <button id="closeBtn">Close</button>
+        </div>
+    </div>
+    <div id="gameButtons">
+        <button id="swap"> Swap The Bottles </button>
+        <button id="hit"> Hit the Pins</button>
+        <button id="solve"> Solve the puzzle</button>
+    </div>
+    <div id="states">
+        <img src="SwapState.png" id="swapState">
+        <img src="AimState.png" id="aimState">
+        <img src="PuzzleState.png" id="puzzleState">
+    </div>
+    <div class="raceMode">
+        <button id="raceModeBtn">Start Race</button>
+        <p id="raceCountdown"></p>
+    </div>
+
+    <div id="cursor-wrapper">
+        <div id="cursor-dot"></div>
+        <div id="tl" class="corner"></div>
+        <div id="tr" class="corner"></div>
+        <div id="br" class="corner"></div>
+        <div id="bl" class="corner">
+        </div>
+    </div>
+    <script src="cursor.js"></script>
+    <script src="index.js"></script>
 </body>
+
+
+
+
 </html>
-
-
-
-
-
-
-
-
-

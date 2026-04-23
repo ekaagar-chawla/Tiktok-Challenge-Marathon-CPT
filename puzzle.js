@@ -138,7 +138,7 @@ function swapTheTiles(index) {
     grid[index] = 0;
 }
 
-function checkIfSolved() { //iterates through the current grid, and compares it to the solved grid that is given in this function. 
+function checkIfSolved() { //iterates through the current grid, and compares it to the solved grid that is given in this function.
     let solved = [1, 2, 3, 4, 5, 6, 7, 8, 0];
     for (let i = 0; i < grid.length; i++) {
         if (grid[i] != solved[i]) {
@@ -146,7 +146,16 @@ function checkIfSolved() { //iterates through the current grid, and compares it 
         }
     }
     stopTimer(); //if solved, the timer stops and the winning message is displayed. This stopTimer() function was made above in the Timer Section.
+
+    // If race mode is on, save the end timestamp and go straight to end screen
+    if (sessionStorage.getItem("raceModeActive") === "true") {
+        sessionStorage.setItem("puzzleEndTime", Date.now());
+        window.location.href = "end.html";
+        return;
+    }
+
     sessionStorage.setItem('puzzleTime', totalSeconds);
+
     document.getElementById("winningmessage").style.display = "block";
 }
 
@@ -181,6 +190,13 @@ document.getElementById("restartBtn").addEventListener("click", function () { //
     generateThePuzzle(); //intializes the whole grid and puzzle again because of the restart button. 
     renderGrid();
 });
+
+// Hide restart, skip, and quit buttons in race mode
+if (sessionStorage.getItem("raceModeActive") === "true") {
+    document.getElementById("restartBtn").style.display = "none";
+    document.getElementById("skipButton").style.display = "none";
+    document.getElementById("quitButton").style.display = "none";
+}
 
 generateThePuzzle();
 renderGrid();

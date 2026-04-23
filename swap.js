@@ -6,19 +6,12 @@ const images = [
   "transblue.png",
   "transpurple.png"
 ];
-
-
 //https://www1.lunapic.com/editor/?action=transparent for transparent images
-
-
-
 
 // Shuffle function
 function shuffle(array) {
   return array.sort(() => Math.random() - 0.5);
 }
-
-
 let topRow, bottomRow;
 function countCorrect(arr1, arr2) {
   let count = 0;
@@ -93,26 +86,14 @@ function draw() {
     btn.style.justifyContent = "center";
     btn.style.justifyContent = "down";
     btn.style.padding = "0";
-
-
-
-
     btn.appendChild(img);
-
-
     btn.addEventListener("click", () => handleClick(index));
-
-
     // highlight selected
     if (index === selectedIndex) {
       btn.style.border = "3px solid gold";
     }
-
-
     topDiv.appendChild(btn);
   });
-
-
   // Bottom row (target)
   bottomRow.forEach((imgSrc, index) => {
     const btn = document.createElement("button");
@@ -187,7 +168,16 @@ function updateScore() {
 
   if (correct == images.length) {
     stopTimer();
+
+    // If race mode is on, save the timestamp and go straight to the next game
+    if (sessionStorage.getItem("raceModeActive") === "true") {
+      sessionStorage.setItem("swapEndTime", Date.now());
+      window.location.href = "aim.html";
+      return;
+    }
+
     sessionStorage.setItem('swapTime', totalSeconds);
+
     document.getElementById("score").style.display = "none";
     document.getElementById("winningMessage").style.display = "block";
     document.getElementById("box").style.display = "none";
@@ -210,6 +200,13 @@ document.getElementById("nextButton").onclick = function () {
   window.location.href = "aim.html";
 }
 
+
+// Hide restart, next, and quit buttons in race mode
+if (sessionStorage.getItem("raceModeActive") === "true") {
+  document.getElementById("restartButton").style.display = "none";
+  document.getElementById("nextButton").style.display = "none";
+  document.getElementById("quitButton").style.display = "none";
+}
 
 document.getElementById("restartButton").onclick = function () {
   stopTimer();

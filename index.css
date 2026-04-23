@@ -10,11 +10,23 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
 h1 {
    color: #55C8F0;
    font-weight: 600;
    text-align: center;
 }
+
+
+
 
 .modal {
    /*Modal inspiration taken from https://www.w3schools.com/howto/howto_css_modals.asp*/
@@ -29,6 +41,9 @@ h1 {
    background-color: rgba(0, 0, 0, 0.4);
 }
 
+
+
+
 .modalContent {
    background-color: #fafafa;
    margin: 15% auto;
@@ -41,6 +56,9 @@ h1 {
    animation: fadeUp 0.3s ease both;
 }
 
+
+
+
 #modalBtn {
    display: block;
    margin: 20px auto;
@@ -52,12 +70,30 @@ h1 {
    font-size: 16px;
    transition: transform 0.15s, box-shadow 0.15s;
 
+
+
+
 }
+
+
+
 
 #modalBtn:hover {
    transform: scale(1.08);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,7 +108,31 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,10 +149,25 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
 #closeBtn:hover {
    transform: scale(1.4);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
 
 
 #infoSwap,
@@ -114,7 +189,19 @@ h1 {
    margin-right: 30px;
 
 
+
+
+
+
+
+
 }
+
+
+
+
+
+
 
 
 #infoSwap:hover,
@@ -128,11 +215,35 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 #infoSwap:active,
 #infoAim:active,
 #infoPuzzle:active {
    transform: scale(0.98);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -146,12 +257,33 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
 #gameButtons {
    display: flex;
    justify-content: center;
    gap: 10px;
    margin: 20px 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -168,10 +300,25 @@ h1 {
    transition: transform 0.15s, box-shadow 0.15s;
 }
 
+
+
+
 #swap:hover {
    transform: scale(1.08);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -192,10 +339,17 @@ h1 {
 
 }
 
+
+
+
 #hit:hover {
    transform: scale(1.08);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
 
 
 
@@ -212,27 +366,13 @@ h1 {
    transition: transform 0.15s, box-shadow 0.15s;
 }
 
+
+
+
 #solve:hover {
    transform: scale(1.08);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
-
-
-
-/*
-* {   
- cursor: none;  
-}
-
-
-
-
-*/
 
 
 
@@ -251,6 +391,18 @@ h1 {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 #cursor-dot {
    position: absolute;
    left: 50%;
@@ -262,6 +414,9 @@ h1 {
    transform: translate(-50%, -50%);
 }
 
+
+
+
 .corner {
    position: absolute;
    left: 50%;
@@ -272,6 +427,9 @@ h1 {
    transition: transform 0.3s ease;
 }
 
+
+
+
 /* I tried different values, these ones work properly */
 #tl {
    border-right: none;
@@ -279,11 +437,17 @@ h1 {
    transform: translate(-18px, -18px);
 }
 
+
+
+
 #tr {
    border-left: none;
    border-bottom: none;
    transform: translate(6px, -18px);
 }
+
+
+
 
 #br {
    border-left: none;
@@ -291,11 +455,17 @@ h1 {
    transform: translate(6px, 6px);
 }
 
+
+
+
 #bl {
    border-right: none;
    border-top: none;
    transform: translate(-18px, 6px);
 }
+
+
+
 
 @keyframes fadeUp {
    from {
@@ -303,8 +473,110 @@ h1 {
       transform: translateY(20px);
    }
 
+
+
+
    to {
       opacity: 1;
       transform: translateY(0);
    }
+}
+
+
+
+
+
+
+
+
+.raceMode {
+   text-align: center;
+   margin-top: 50px;
+
+}
+
+
+
+
+.raceMode h2 {
+   color: #ffffff;
+   font-size: 60px;
+   background-color: rgb(255, 0, 0);
+   width: 50%;
+   margin-left: 33%;
+   margin-bottom: 10px;
+   padding: 10px 20px;
+   border-radius: 10px;
+
+
+}
+
+
+
+
+#raceCountdown {
+   position: fixed;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 99999;
+   color: white;
+   font-size: 200px;
+   font-weight: bold;
+   text-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+   pointer-events: none;
+}
+
+
+
+
+#raceModeBtn {
+   padding: 12px 40px;
+   font-size: 24px;
+   font-weight: bold;
+   color: #ffffff;
+   background-color: rgb(255, 0, 0);
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+
+
+
+#raceModeBtn:hover {
+   background-color: rgb(200, 0, 0);
+}
+
+
+
+
+#raceModeBtn:disabled {
+   background-color: #888;
+   cursor: not-allowed;
+}
+
+
+
+
+#states {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   gap: 40px;
+   /* space between images */
+   margin-top: 50px;
+}
+
+
+#swapState,
+#aimState,
+#puzzleState {
+   width: 300px;
+   height: 300px;
+   position: static;
+   /* remove fixed/relative/center */
+   margin: 0;
+   transform: none;
 }
